@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 __version__ = '0.9.0'
 
@@ -12,7 +12,7 @@ setup(
     author = 'Sébastien Eustace',
     author_email = 'sebastien.eustace@gmail.com',
     url = 'https://github.com/SDisPater/console-component',
-    packages = ['console'],
+    packages = find_packages(),
     install_requires = [],
     tests_require=['nose'],
     test_suite='nose.collector',
