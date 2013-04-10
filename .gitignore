@@ -1,0 +1,30 @@
+# -----------------------------
+# Editor backup and stale files
+# -----------------------------
+
+# Emacs:
+*~
+\#*#
+.#*
+
+# VI(M):
+.*.swp
+.*.swo
+
+# TextMate
+._*
+*.tmproj
+
+# ------------
+# Python files
+# ------------
+
+*.pyc
+
+# -----------------
+# OS metadata files
+# -----------------
+
+# Mac OS X
+.DS_Store
+__MACOSX
