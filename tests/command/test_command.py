@@ -2,11 +2,11 @@
 
 import os
 from unittest import TestCase
-from online.lib.console.command.command import Command
-from online.lib.console.application import Application
-from online.lib.console.input.input_definition import InputDefinition
-from online.lib.console.input.input_argument import InputArgument
-from online.lib.console.input.input_option import InputOption
+from console.command.command import Command
+from console.application import Application
+from console.input.input_definition import InputDefinition
+from console.input.input_argument import InputArgument
+from console.input.input_option import InputOption
 from ..fixtures.test_command import TestCommand
 
 

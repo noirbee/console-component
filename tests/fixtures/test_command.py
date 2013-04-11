@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from online.lib.console.command.command import Command
+from console.command.command import Command
 
 
 class TestCommand(Command):

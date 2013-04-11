@@ -3,8 +3,8 @@
 import re
 
 from unittest import TestCase
-from online.lib.console.tester.command_tester import CommandTester
-from online.lib.console.application import Application
+from console.tester.command_tester import CommandTester
+from console.application import Application
 
 
 class ListCommandTest(TestCase):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase
-from online.lib.console.tester.command_tester import CommandTester
-from online.lib.console.command.command import Command
-from online.lib.console.output.output import Output
+from console.tester.command_tester import CommandTester
+from console.command.command import Command
+from console.output.output import Output
 
 
 class TestCommandTester(TestCase):
