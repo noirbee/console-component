@@ -84,7 +84,8 @@ class InputDefinition(object):
         values = {}
 
         for argument in self.__arguments.values():
-            values[argument.get_name()] = argument.get_default()
+            if not argument.is_required():
+                values[argument.get_name()] = argument.get_default()
 
         return values
 
