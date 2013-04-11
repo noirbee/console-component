@@ -3,8 +3,8 @@
 import StringIO
 
 from unittest import TestCase
-from online.lib.console.helper.progress_helper import ProgressHelper
-from online.lib.console.output.stream_output import StreamOutput
+from console.helper.progress_helper import ProgressHelper
+from console.output.stream_output import StreamOutput
 
 
 class ProgressHelperTest(TestCase):

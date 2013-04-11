@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase
-from online.lib.console.tester.application_tester import ApplicationTester
-from online.lib.console.application import Application
-from online.lib.console.output.output import Output
+from console.tester.application_tester import ApplicationTester
+from console.application import Application
+from console.output.output import Output
 
 
 class TestApplicationTester(TestCase):

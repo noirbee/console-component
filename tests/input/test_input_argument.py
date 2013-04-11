@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase
-from online.lib.console.input.input_argument import InputArgument
+from console.input.input_argument import InputArgument
 
 
 class InputArgumentTest(TestCase):

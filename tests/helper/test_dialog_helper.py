@@ -4,10 +4,10 @@ import StringIO
 import re
 
 from unittest import TestCase
-from online.lib.console.helper.dialog_helper import DialogHelper
-from online.lib.console.helper.helper_set import HelperSet
-from online.lib.console.helper.formatter_helper import FormatterHelper
-from online.lib.console.output.stream_output import StreamOutput
+from console.helper.dialog_helper import DialogHelper
+from console.helper.helper_set import HelperSet
+from console.helper.formatter_helper import FormatterHelper
+from console.output.stream_output import StreamOutput
 
 
 class DialogHelperTest(TestCase):

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from unittest import TestCase
-from online.lib.console.input.input_option import InputOption
+from console.input.input_option import InputOption
 
 
 class InputOptionTest(TestCase):
