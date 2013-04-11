@@ -13,7 +13,7 @@ setup(
     author_email = 'sebastien.eustace@gmail.com',
     url = 'https://github.com/SDisPater/console-component',
     packages = find_packages(),
-    install_requires = [],
+    install_requires = ['ordereddict', 'python-Levenshtein'],
     tests_require=['nose'],
     test_suite='nose.collector',
     classifiers = [
