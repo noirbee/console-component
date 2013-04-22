@@ -33,6 +33,7 @@ class InputDefinition(object):
 
         self.__arguments = OrderedDict()
         self.__required_count = 0
+        self.__has_an_array_argument = False
         self.__has_optional = False
 
         self.add_arguments(arguments)
@@ -47,8 +48,14 @@ class InputDefinition(object):
         if argument.get_name() in self.__arguments:
             raise Exception('An argument with name "%s" already exists.' % argument.get_name())
 
+        if self.__has_an_array_argument:
+            raise Exception('Cannot add an argument after an array argument.')
+
         if argument.is_required() and self.__has_optional:
             raise Exception('Cannot add a required argument after an optional one.')
+
+        if argument.is_array():
+            self.__has_an_array_argument = True
 
         if argument.is_required():
             self.__required_count += 1
@@ -75,7 +82,7 @@ class InputDefinition(object):
         return self.__arguments.values()
 
     def get_argument_count(self):
-        return len(self.__arguments)
+        return len(self.__arguments) if not self.__has_an_array_argument else 10000000
 
     def get_argument_required_count(self):
         return self.__required_count
@@ -166,7 +173,9 @@ class InputDefinition(object):
             else:
                 element = '[%s]'
 
-            elements.append(element % argument.get_name())
+            elements.append(element % argument.get_name() + ('1' if argument.is_array() else ''))
+            if argument.is_array():
+                elements.append('... [%sN]' % argument.get_name())
 
         return ' '.join(elements)
 
@@ -211,7 +220,7 @@ class InputDefinition(object):
                 else:
                     default = ''
 
-                multiple = ''
+                multiple = '<comment> (multiple values allowed)</comment>' if option.is_array() else ''
                 description = option.get_description().replace('\n', '\n' + ' ' * (mx + 2))
 
                 option_max = mx - len(option.get_name()) - 2

@@ -43,7 +43,7 @@ class Input(object):
         if not self.definition.has_argument(name):
             raise Exception('Argument "%s" does not exist' % name)
 
-        return self.arguments.get(name)
+        return self.arguments.get(name, self.definition.get_argument(name).get_default())
 
     def set_argument(self, name, value):
         if not self.definition.has_argument(name):
@@ -61,7 +61,7 @@ class Input(object):
         if not self.has_option(name):
             raise Exception('Option "%s" does not exist' % name)
 
-        return self.options.get(name)
+        return self.options.get(name, self.definition.get_option(name).get_default())
 
     def set_option(self, name, value):
         if not self.definition.has_option(name):

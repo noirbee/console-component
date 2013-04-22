@@ -97,8 +97,10 @@ class ArgvInput(Input):
         # if input is expecting another argument, add it
         if self.definition.has_argument(c):
             arg = self.definition.get_argument(c)
-            self.arguments[arg.get_name()] = token
-
+            self.arguments[arg.get_name()] = [token] if arg.is_array() else token
+        elif self.definition.has_argument(c - 1) and self.definition.get_argument(c - 1).is_array():
+            arg = self.definition.get_argument(c - 1)
+            self.arguments[arg.get_name()].append(token)
         # unexpected argument
         else:
             raise Exception('Too many arguments')
@@ -136,7 +138,13 @@ class ArgvInput(Input):
 
             value = option.get_default() if option.is_value_optional() else True
 
-        self.options[name] = value
+        if option.is_array():
+            if name not in self.options:
+                self.options[name] = [value]
+            else:
+                self.options[name].append(value)
+        else:
+            self.options[name] = value
 
     def get_first_argument(self):
         for token in self.__tokens:
