@@ -459,6 +459,10 @@ class Application(object):
             else:
                 namespaced_commands[key] = {name: command}
 
+        for name, command in namespaced_commands.get('_global', {}).items():
+            if name in namespaced_commands:
+                namespaced_commands[name][name] = namespaced_commands['_global'].pop(name)
+
         for namespace, commands in namespaced_commands.items():
             namespaced_commands[namespace] = sorted(commands.items(), key=lambda x: x[0])
 
