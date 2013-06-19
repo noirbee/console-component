@@ -222,6 +222,9 @@ class Command(object):
             self.merge_application_definition(False)
 
         messages = [
+            '<comment>Description:</comment>',
+            ' ' + self.get_description(),
+            '',
             '<comment>Usage:</comment>',
             ' ' + self.get_synopsis(),
             '',
